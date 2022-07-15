@@ -1,5 +1,11 @@
 'use strict';
 
+//JSdocs - para trazer o auto complet do sequelize
+/**
+ * @param {import ('sequelize').Sequelize } sequelize
+ * @param {import ('sequelize').DataTypes} DataTypes
+ */
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Categories', { 
