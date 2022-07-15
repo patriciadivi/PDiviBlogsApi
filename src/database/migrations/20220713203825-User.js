@@ -2,8 +2,8 @@
 
 //JSdocs - para trazer o auto complet do sequelize
 /**
- * @param {import ('sequelize').Sequelize } sequelize
- * @param {import ('sequelize').DataTypes} DataTypes
+ * @param {import ('sequelize').queryInterface } queryInterface
+ * @param {import ('sequelize').Sequelize} Sequelize
  */
 
 module.exports = {
