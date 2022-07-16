@@ -5,7 +5,6 @@
  * @param {import ('sequelize').DataTypes} DataTypes
  */
 
-
 const createUserModel = (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
         id: {
@@ -13,18 +12,26 @@ const createUserModel = (sequelize, DataTypes) => {
             primaryKey: true,
 
         },
-        displayName: DataTypes.STRING,
-        email: DataTypes.STRING,
-        password: DataTypes.STRING,
-        image: DataTypes.STRING,
+        displayName: {
+            type: DataTypes.STRING,
+        },
+        email:{
+            type: DataTypes.STRING,
+        },
+        password: {
+            type: DataTypes.STRING,
+        },
+        image: {
+            type: DataTypes.STRING,
+        },
     }, {
         //options - opcional
         tableName: 'Users', //nome da tabela
-        timestamps: 'false',
+        timestamps: false,
     });
 
     User.associate = (db) => {
-        // User.hasMany(db.BlogPost, { as: 'blogPost', foreignKey: 'userId' })
+        User.hasMany(db.BlogPost, { as: 'blogPost', foreignKey: 'userId' })
     };
 
     return User;

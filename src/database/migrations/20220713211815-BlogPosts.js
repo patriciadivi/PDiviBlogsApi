@@ -1,5 +1,8 @@
 'use strict';
 
+const { NOW } = require('sequelize');
+const sequelize = require('sequelize');
+
 //JSdocs - para trazer o auto complet do sequelize
 /**
  * @param {import ('sequelize').queryInterface } queryInterface
@@ -34,10 +37,14 @@ module.exports = {
       published: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
+        field: 'published',
       },
       updated: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
+        field: 'updated',
       },
     });
   },

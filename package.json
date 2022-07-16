@@ -9,6 +9,7 @@
   "dependencies": {
     "dotenv": "8.2.0",
     "express": "4.17.1",
+    "express-async-errors": "^3.1.1",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
@@ -30,7 +31,8 @@
     "posttest": "npm run kill:test",
     "test-coverage": "jest -i --verbose --forceExit --coverage",
     "debug": "nodemon .",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json .",
+    "mytest": "NODE_ENV=test npm run start:test"
   },
   "devDependencies": {
     "eslint": "6.8.0",
