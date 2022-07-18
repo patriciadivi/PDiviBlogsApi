@@ -5,6 +5,7 @@ const { tokenValidation } = require('../middlewares/tokenGlobal');
 
 const user = Router();
 
+user.get('/', tokenValidation, controllers.getUserControllerID);
 user.get('/user', tokenValidation, controllers.getUserControllerAll);
 user.post('/user', validade, controllers.postUserController);
 
