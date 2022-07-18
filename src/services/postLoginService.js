@@ -13,7 +13,6 @@ const postLoginService = async (email, password) => {
 
     const token = tokenGenerate({
         email,
-        password,
     });
     console.log(token);
 

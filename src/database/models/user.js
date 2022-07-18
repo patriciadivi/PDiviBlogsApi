@@ -1,16 +1,12 @@
 'use strict';
-//JSdocs - para trazer o auto complet do sequelize
-/**
- * @param {import ('sequelize').Sequelize } sequelize
- * @param {import ('sequelize').DataTypes} DataTypes
- */
 
 const createUserModel = (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
         id: {
+            allowNull: false,
+            autoIncrement: true,
             type: DataTypes.INTEGER,
             primaryKey: true,
-
         },
         displayName: {
             type: DataTypes.STRING,
@@ -30,8 +26,8 @@ const createUserModel = (sequelize, DataTypes) => {
         timestamps: false,
     });
 
-    User.associate = (db) => {
-        User.hasMany(db.BlogPost, { as: 'blogPost', foreignKey: 'userId' })
+    User.associate = (models) => {
+        User.hasMany(models.BlogPost, { as: 'blogPost', foreignKey: 'userId' })
     };
 
     return User;
