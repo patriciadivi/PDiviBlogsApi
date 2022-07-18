@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const controllers = require('../controllers/index');
-// const userValidation = require('../middlewares/requestLogin');
+// const nameValidation = require('../middlewares/zod/nameValidation');
 const { tokenValidation } = require('../middlewares/tokenGlobal');
 
 const categories = Router();
