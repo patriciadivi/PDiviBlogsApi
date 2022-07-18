@@ -10,7 +10,6 @@ const postUserService = async (data) => {
       const createdUser = await User.create(data);
     
         const token = await tokenGenerate(createdUser);
-        console.log(token, 'to');
         return token; 
 };
 
