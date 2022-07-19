@@ -27,10 +27,15 @@ const  createBlogPostModel = (sequelize, DataTypes) => {
                 key: 'id',
             },
         },
-
+        published: {
+            type: DataTypes.DATE,
+        },
+        updated: {
+            type: DataTypes.DATE,
+        },
     },{
         tableName: 'BlogPosts', //nome da tabela
-        timestamps: false,
+        timestamps: true,
     });
 
     BlogPost.associate = (db) => {
