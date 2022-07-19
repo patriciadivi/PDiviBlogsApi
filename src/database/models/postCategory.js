@@ -7,7 +7,7 @@
  */
 
 const createPostCategorie = (sequelize, DataTypes) => {
-    const PostCategorie = sequelize.define('PostCategorie', {
+    const PostCategorie = sequelize.define('PostCategory', {
         postId: {
             allowNull: false,
             type: DataTypes.INTEGER,
