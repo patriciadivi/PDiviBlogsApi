@@ -15,14 +15,17 @@ const createCategorieModel = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true,
         },
-        name: DataTypes.STRING,
+        name: {
+            allowNull: false,
+            type: DataTypes.STRING,
+        },
     },{
         tableName: 'Categories',
         timestamps: false,
     })
 
     Category.associate = (db) => {
-        Category.hasMany(db.PostCategorie, { as: 'PostCategories', foreignKey: 'categoryId' })
+        Category.hasMany(db.PostCategory, { as: 'PostCategories', foreignKey: 'categoryId' })
     };
 
     return Category;

@@ -29,13 +29,20 @@ const createPostCategorie = (sequelize, DataTypes) => {
         timestamps: false,
     })
 
-    PostCategorie.associate = (db) => {
-        PostCategorie.belongsTo(db.BlogPost, { as: 'BlogPosts', foreignKey: 'postId' })
-    };
-
-    PostCategorie.associate = (db) => {
-        PostCategorie.belongsTo(db.Category, { as: 'Categories', foreignKey: 'categoryId' })
-    };
+        PostCategorie.associate = (db) => {
+            db.Category.belongsToMany(db.BlogPost, {
+              as: 'blogPost',
+              through: PostCategorie,
+              foreignKey: 'postId',
+              otherKey: 'categoryId',
+            });
+            db.BlogPost.belongsToMany(db.Category, {
+              as: 'category',
+              through: PostCategorie,
+              foreignKey: 'categoryId',
+              otherKey: 'postId',
+            });
+          }
 
     return PostCategorie;
 };
