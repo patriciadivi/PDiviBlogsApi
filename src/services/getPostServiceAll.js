@@ -8,12 +8,6 @@ const getPostServiceAll = async () => {
           ],
         });
 
-        const categories = getPostAllModels[0];
-        console.log('categories', categories);
-        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
-
-        // const { dataValues } = categories;
-        // console.log(dataValues);
         return getPostAllModels;
     };
     
