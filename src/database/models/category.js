@@ -24,9 +24,16 @@ const createCategorieModel = (sequelize, DataTypes) => {
         timestamps: false,
     })
 
-    Category.associate = (db) => {
-        Category.hasMany(db.PostCategory, { as: 'PostCategories', foreignKey: 'categoryId' })
-    };
+    // Category.associate = (db) => {
+    //     Category.belongsTo(db.PostCategories, { as: 'PostCategories', foreignKey: 'postId' })
+    // };
+
+    // Category.associate = (db) => {
+    //     Category.hasMany(db.PostCategory, { 
+    //         as: 'PostCategories',
+    //         foreignKey: 'categoryId' 
+    //     });
+    // };
 
     return Category;
 };

@@ -5,6 +5,7 @@ const getUserControllerID = require('./getUserControllerID');
 const postCategoriesController = require('./postCategoriesController');
 const getCategoriesController = require('./getCategoriesController');
 const getPostControllerAll = require('./getPostControllerAll');
+const postPostController = require('./postPostController');
 
 module.exports = {
     postLoginController,
@@ -14,4 +15,5 @@ module.exports = {
     postCategoriesController,
     getCategoriesController,
     getPostControllerAll,
+    postPostController,
 };

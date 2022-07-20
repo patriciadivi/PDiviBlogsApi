@@ -11,18 +11,18 @@ const createPostCategorie = (sequelize, DataTypes) => {
         postId: {
             allowNull: false,
             type: DataTypes.INTEGER,
-            references: {
-                model: 'BlogPosts',
-                key: 'id',
-            }
+            // references: {
+            //     model: 'BlogPosts',
+            //     key: 'id',
+            // }
         },
         categoryId: {
             allowNull: false,
             type: DataTypes.INTEGER,
-            references: {
-                model: 'Category',
-                key: 'id',
-            }
+            // references: {
+            //     model: 'Category',
+            //     key: 'id',
+            // }
         },
     },{
         tableName: 'PostCategories',
@@ -33,14 +33,14 @@ const createPostCategorie = (sequelize, DataTypes) => {
             db.Category.belongsToMany(db.BlogPost, {
               as: 'blogPost',
               through: PostCategorie,
-              foreignKey: 'postId',
-              otherKey: 'categoryId',
-            });
-            db.BlogPost.belongsToMany(db.Category, {
-              as: 'category',
-              through: PostCategorie,
               foreignKey: 'categoryId',
               otherKey: 'postId',
+            });
+            db.BlogPost.belongsToMany(db.Category, {
+              as: 'categories',
+              through: PostCategorie,
+              foreignKey: 'postId',
+              otherKey: 'categoryId',
             });
           }
 

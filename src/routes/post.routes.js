@@ -7,6 +7,6 @@ const post = Router();
 
 // post.get('/post/:id', tokenValidation, controllers.getPostControllerID);
 post.get('/post', tokenValidation, controllers.getPostControllerAll);
-// post.post('/post', validade, controllers.postPostController);
+post.post('/post', tokenValidation, controllers.postPostController);
 
 module.exports = post;

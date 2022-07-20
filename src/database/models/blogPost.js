@@ -35,15 +35,22 @@ const  createBlogPostModel = (sequelize, DataTypes) => {
         },
     },{
         tableName: 'BlogPosts', //nome da tabela
-        timestamps: true,
+        createdAt: 'published',
+        updatedAt: 'updated',
     });
 
     BlogPost.associate = (db) => {
-        BlogPost.belongsTo(db.User, { as: 'user', foreignKey: 'userId' })
+        BlogPost.belongsTo(db.User, { 
+            as: 'user',
+            foreignKey: 'userId' 
+        });
     };
 
     // BlogPost.associate = (db) => {
-    //     BlogPost.hasMany(db.PostCategorie, { as: 'postCategorie', foreignKey: 'postId' })
+    //     BlogPost.hasMany(db.PostCategorie, { 
+    //         as: 'postCategorie',
+    //         foreignKey: 'postId' 
+    //     });
     // };
 
     return BlogPost;
