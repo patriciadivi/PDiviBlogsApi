@@ -6,7 +6,7 @@ const postPostController = async (req, res) => {
 
     const resultPostController = await 
     services.postPostService(title, content, categoryIds, authorization);
-    return res.status(201).json(resultPostController);
+    return res.status(201).json(resultPostController.dataValues);
 };
 
 module.exports = postPostController;

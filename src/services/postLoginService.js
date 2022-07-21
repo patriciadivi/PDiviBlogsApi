@@ -3,9 +3,7 @@ const { MyError } = require('../utils/errorCustomer');
 const { tokenGenerate } = require('../utils/tokenGenerate');
 
 const postLoginService = async (email, password) => {
-    // console.log(login);
     const tableUser = await User.findOne({ where: { email } });
-    // console.log('tableUser', tableUser);
     if (!tableUser) throw new MyError(400, 'Invalid fields');
 
     const tokenPassword = tableUser.password === password;
@@ -14,7 +12,6 @@ const postLoginService = async (email, password) => {
     const token = tokenGenerate({
         email,
     });
-    console.log(token);
 
     return token;
 };

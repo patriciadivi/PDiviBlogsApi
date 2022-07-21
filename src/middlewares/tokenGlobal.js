@@ -6,7 +6,6 @@ const tokenValidation = async (req, _res, next) => {
     if (!authorization) throw new MyError(401, 'Token not found');
 
     const ifTokenValidated = await validateToken(authorization);
-    // console.log('ifTokenValidated', ifTokenValidated);
 
     if (!ifTokenValidated) throw new MyError(401, 'Expired or invalid token');
     return next();
