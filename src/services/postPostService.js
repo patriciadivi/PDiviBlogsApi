@@ -11,7 +11,9 @@ const postPostService = async (titleParams, contentParams, categoryIdsParams, au
     
     const decryptToken = decryptTokenfunc(authorization);
     // console.log('decryptToken', decryptToken);
-    const idUserId = decryptToken.data.id;
+    // const idUserId = decryptToken.data.id;
+    // console.log('idUserId>>>>>>>>', !idUserId);
+    // if (!idUserId) throw new MyError(400, '"idUserId" not found');
     // const verificationUser = await User.findOne({ where: { id: idUserId } });
     // const resultUser = verificationUser.dataValues;
     // const { id: userIdGet } = resultUser;
@@ -28,7 +30,7 @@ const postPostService = async (titleParams, contentParams, categoryIdsParams, au
     const createNewPost = await BlogPost.create({
             title: titleParams,
             content: contentParams,
-            userId: idUserId,
+            userId: decryptToken.id,
         });
         
         return createNewPost; 
