@@ -1,6 +1,5 @@
-const jwt = require('jsonwebtoken');
-
 require('dotenv').config();
+const jwt = require('jsonwebtoken');
 const { MyError } = require('./errorCustomer');
 
 const validateToken = (token) => new Promise((resolve, _reject) => {

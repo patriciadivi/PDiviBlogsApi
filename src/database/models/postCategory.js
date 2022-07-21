@@ -11,18 +11,12 @@ const createPostCategorie = (sequelize, DataTypes) => {
         postId: {
             allowNull: false,
             type: DataTypes.INTEGER,
-            // references: {
-            //     model: 'BlogPosts',
-            //     key: 'id',
-            // }
+            // primaryKey: true,
         },
         categoryId: {
             allowNull: false,
             type: DataTypes.INTEGER,
-            // references: {
-            //     model: 'Category',
-            //     key: 'id',
-            // }
+            // primaryKey: true,
         },
     },{
         tableName: 'PostCategories',

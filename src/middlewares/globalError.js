@@ -9,7 +9,7 @@ class GlobalError {
         if (error instanceof MyError) {
             return res.status(error.status).json({ message: error.message });
         }
-        return res.status(this.defaultStatus).json({ message: 'Verification Failed' });
+        return res.status(this.defaultStatus).json({ message: `>>>> ${error.message}` });
     }
 }
 
